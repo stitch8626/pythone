@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторная работа №13</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Лабораторная работа №13</h1>
+  <p class="desc">
+    Использование функций и замыканий в JavaScript.
+  </p>
+
+  <div class="block">
+    <h2>Задание 1 — createGreeter</h2>
+    <label for="greeting">Приветствие (например, "Привет"):</label>
+    <input type="text" id="greeting" placeholder="Введите приветствие">
+
+    <label for="nameInput">Имя:</label>
+    <input type="text" id="nameInput" placeholder="Введите имя">
+
+    <button id="greeterBtn">Сформировать приветствие</button>
+
+    <div class="result">
+      <div>Результат:</div>
+      <div id="greeterOutput" class="output"></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Задание 2 — sumUnique</h2>
+    <p class="desc">Введите числа через запятую, например: 1, 2, 2, 3, 5</p>
+    <label for="sumInput">Числа:</label>
+    <input type="text" id="sumInput" placeholder="1, 2, 2, 3, 5">
+
+    <button id="sumBtn">Посчитать сумму уникальных</button>
+
+    <div class="result">
+      <div>Сумма уникальных чисел:</div>
+      <div id="sumOutput" class="output"></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Задание 3 — factorial</h2>
+    <label for="factInput">Число (0–20):</label>
+    <input type="number" id="factInput" min="0" max="20" value="5">
+
+    <button id="factBtn">Вычислить факториал</button>
+
+    <div class="result">
+      <div>Результат:</div>
+      <div id="factOutput" class="output"></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Задание 4 — createTimer</h2>
+    <p class="desc">
+      Введите числа через запятую (например: -2, 0, 5, 10, -3). Будут оставлены только положительные.
+    </p>
+
+    <label for="timerInput">Массив чисел:</label>
+    <input type="text" id="timerInput" placeholder="-2, 0, 5, 10, -3">
+
+    <button id="timerFilterBtn">Запустить фильтрацию</button>
+    <button id="timerStatsBtn">Показать суммарное время</button>
+
+    <div class="result">
+      <div>Результат фильтрации (после задержки):</div>
+      <div id="timerOutput" class="output pre-output"></div>
+      <div style="margin-top:8px;">Суммарное время (мс):</div>
+      <div id="timerTimeOutput" class="output"></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Задание 5 — createRandomGenerator</h2>
+    <p class="desc">
+      Нажимайте «Сгенерировать число». Статистика по всем сгенерированным числам — через «Показать статистику».
+    </p>
+
+    <label for="seedInput">Начальное значение (seed):</label>
+    <input type="number" id="seedInput" value="1">
+
+    <button id="initRandomBtn">Создать генератор</button>
+    <button id="generateBtn" disabled>Сгенерировать число</button>
+    <button id="statsBtn" disabled>Показать статистику</button>
+
+    <div class="result">
+      <div>Сгенерированные числа:</div>
+      <div id="randomOutput" class="output pre-output"></div>
+
+      <div style="margin-top:8px;">Статистика:</div>
+      <div id="statsOutput" class="output"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

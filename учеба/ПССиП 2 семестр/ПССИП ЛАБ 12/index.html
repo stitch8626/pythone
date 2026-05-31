@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ЛР 12</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Лабораторная работа №12</h1>
+
+  <div class="block">
+    <h2>2. Работа с пользовательской строкой</h2>
+    <p class="desc">
+      Введите строку, нажмите «Обработать строку». Будет показано количество слов и изменённое предложение.
+    </p>
+    <label for="userInput">Строка пользователя:</label>
+    <input type="text" id="userInput" placeholder="Введите строку">
+
+    <button id="processBtn">Обработать строку</button>
+
+    <div class="result">
+      <div>Количество слов:</div>
+      <div id="wordsCount" class="output"></div>
+
+      <div style="margin-top:8px;">Изменённое предложение:</div>
+      <div id="changedSentence" class="output"></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>3–5. Работа с заданным текстом</h2>
+    <p class="desc">Исходный текст:</p>
+    <div id="sourceText" class="text-box"></div>
+
+    <button id="removeABtn">Удалить букву «а» / «А»</button>
+    <div class="result">
+      <div>Текст без буквы «а»:</div>
+      <div id="noAText" class="output"></div>
+    </div>
+
+    <button id="upperBtn">Преобразовать в верхний регистр</button>
+    <div class="result">
+      <div>Текст в верхнем регистре:</div>
+      <div id="upperText" class="output pre-output"></div>
+    </div>
+
+    <button id="charsBtn">Вывести посимвольно</button>
+    <div class="result">
+      <div>Текст посимвольно:</div>
+      <div id="charsOutput" class="output pre-output"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

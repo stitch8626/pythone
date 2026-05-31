@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Моё Веб-Приложение (CRUD)</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #f4f7f6; }
+        h1 { color: #333; }
+        .form-group { margin-bottom: 20px; display: flex; gap: 10px; }
+        input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 10px 15px; border: none; background: #28a745; color: white; border-radius: 4px; cursor: pointer; }
+        button.delete-btn { background: #dc3545; padding: 5px 10px; }
+        ul { list-style: none; padding: 0; }
+        li { background: white; padding: 15px; margin-bottom: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .links { margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px; }
+        a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <h1>📝 Список задач (CRUD App)</h1>
+
+    <div class="form-group">
+        <input type="text" id="todoTitle" placeholder="Введите новую задачу...">
+        <button onclick="addTodo()">Добавить</button>
+    </div>
+
+    <ul id="todoList"></ul>
+
+    <div class="links">
+        Пульт управления для разработчика: <a href="/api-docs" target="_blank">📖 Открыть Swagger API</a>
+    </div>
+
+    <script>
+        const API_URL = '/todos';
+
+        // 1. ЧТЕНИЕ задач (GET)
+        async function loadTodos() {
+            const res = await fetch(API_URL);
+            const todos = await res.json();
+            const list = document.getElementById('todoList');
+            list.innerHTML = '';
+            
+            todos.forEach(todo => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${todo.title}</span>
+                    <button class="delete-btn" onclick="deleteTodo(${todo.id})">Удалить</button>
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        // 2. ЗАПИСЬ задачи (POST)
+        async function addTodo() {
+            const input = document.getElementById('todoTitle');
+            if (!input.value.trim()) return alert('Введи текст!');
+
+            await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title: input.value })
+            });
+
+            input.value = '';
+            loadTodos(); // Перезагружаем список
+        }
+
+        // 3. УДАЛЕНИЕ задачи (DELETE)
+        async function deleteTodo(id) {
+            await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+            loadTodos(); // Перезагружаем список
+        }
+
+        // Загрузить данные при старте страницы
+        loadTodos();
+    </script>
+</body>
+</html>

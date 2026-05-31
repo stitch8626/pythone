@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Строковые задания на JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Задания по JavaScript (строки)</h1>
+
+    <!-- Блок задания 2 -->
+    <section class="block">
+      <h2>Задание 2: обработка строки пользователя</h2>
+      <p class="desc">
+        Введите строку, программа:
+        1) посчитает количество слов;
+        2) удалит 2‑е и 3‑е слово и заменит их на подстроку;
+        3) выведет изменённое предложение.
+      </p>
+      <label for="user-input">Строка пользователя:</label>
+      <textarea id="user-input" rows="3" placeholder="Введите любую строку..."></textarea>
+
+      <label for="replace-text">Подстрока для замены 2 и 3 слова:</label>
+      <input id="replace-text" type="text" value="Новая_подстрока">
+
+      <button id="process-btn">Обработать строку</button>
+
+      <div class="result">
+        <p><strong>Количество слов:</strong> <span id="word-count">—</span></p>
+        <p><strong>Изменённое предложение:</strong></p>
+        <p id="changed-sentence" class="output"></p>
+      </div>
+    </section>
+
+    <!-- Блок заданий 3–5 -->
+    <section class="block">
+      <h2>Задания 3–5: работа с готовым текстом</h2>
+
+      <p class="desc">
+        Исходный текст:
+      </p>
+      <div class="text-box" id="original-text">
+        Однажды утром, после сильной бури, Костя и его младшая сестра Маша отправились на прогулку.
+        Они любили это место за тишину и прохладу. Вдруг у самого корня дерева Маша заметила что-то блестящее.
+        Это была маленькая, потемневшая от времени металлическая коробочка.
+      </div>
+
+      <button id="remove-a-btn">3. Удалить букву «а» / «А»</button>
+      <div class="result">
+        <p><strong>Текст без «а»:</strong></p>
+        <p id="text-no-a" class="output"></p>
+      </div>
+
+      <button id="upper-btn">4. Преобразовать в ВЕРХНИЙ регистр</button>
+      <div class="result">
+        <p><strong>Текст в верхнем регистре:</strong></p>
+        <p id="text-upper" class="output"></p>
+      </div>
+
+      <button id="chars-btn">5. Вывести текст посимвольно</button>
+      <div class="result">
+        <p><strong>Текст посимвольно:</strong></p>
+        <pre id="text-chars" class="output pre-output"></pre>
+      </div>
+    </section>
+
+    <!-- Блок с краткими объяснениями (для PDF) -->
+    <section class="block">
+      <h2>Краткие объяснения (для PDF)</h2>
+      <ol class="desc">
+        <li><strong>split(" ")</strong> — разбивает строку на массив слов по пробелам.</li>
+        <li><strong>length</strong> — возвращает количество элементов массива (кол-во слов).</li>
+        <li><strong>splice(1, 2, "Новая_подстрока")</strong> — удаляет 2 элемента, начиная со 2‑го, и вставляет новую подстроку.</li>
+        <li><strong>join(" ")</strong> — объединяет массив обратно в строку, вставляя пробелы.</li>
+        <li><strong>replace(/а/gi, "")</strong> — удаляет все буквы «а» и «А» с помощью регулярного выражения.</li>
+        <li><strong>toUpperCase()</strong> — переводит весь текст в верхний регистр.</li>
+        <li>Цикл <strong>for...of</strong> по строке позволяет вывести текст посимвольно.</li>
+      </ol>
+      <p class="desc">
+        Чтобы сделать PDF с объяснениями и результатами, используйте в браузере
+        <strong>Печать → Сохранить как PDF</strong>.
+      </p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

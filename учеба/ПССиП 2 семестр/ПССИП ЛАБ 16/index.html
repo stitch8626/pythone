@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Lab — Задания 1-5</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Продвинутый JavaScript: Асинхронность</h1>
+
+  <div class="card">
+    <h2>1. Очередь задач с приоритетом</h2>
+    <div class="controls">
+      <input type="text" id="t1_name" placeholder="Название задачи">
+      <input type="number" id="t1_prior" placeholder="Приоритет (число)">
+      <button id="btn_task1">Добавить и Запустить</button>
+    </div>
+    <div id="out1" class="output">Ожидание задач...</div>
+  </div>
+
+  <div class="card">
+    <h2>2. Асинхронное кэширование (TTL)</h2>
+    <div class="controls">
+      <button id="btn_task2">Запрос к API (кэш 10 сек)</button>
+    </div>
+    <div id="out2" class="output">Нажми для проверки кэша...</div>
+  </div>
+
+  <div class="card">
+    <h2>3. Асинхронные события (Группировка)</h2>
+    <div class="controls">
+      <button id="btn_task3">Выполнить группу событий</button>
+    </div>
+    <div id="out3" class="output">Готов к обработке событий...</div>
+  </div>
+
+  <div class="card">
+    <h2>4. Конвейер (Pipeline)</h2>
+    <div class="controls">
+      <button id="btn_pipeline_start">Старт</button>
+      <button id="btn_pipeline_pause" class="secondary">Пауза</button>
+      <button id="btn_pipeline_resume" class="secondary">Продолжить</button>
+    </div>
+    <div id="out4" class="output">Конвейер ожидает...</div>
+  </div>
+
+  <div class="card">
+    <h2>5. Ограничение одновременных вызовов</h2>
+    <div class="controls">
+      <button id="btn_task5">Запустить 5 задач (лимит 2)</button>
+    </div>
+    <div id="out5" class="output">Семафор готов...</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
