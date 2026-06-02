@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная №25: Хранение данных</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Организация хранения данных в браузере</h1>
+        <p>localStorage, sessionStorage, Cookies и File System API</p>
+    </header>
+    
+    <main class="grid-container">
+        
+        <section class="card" id="settings-card">
+            <h3>1. Настройки (localStorage)</h3>
+            <div class="control-group">
+                <label>Цвет фона: <input type="color" id="bgColor" value="#ffffff"></label>
+            </div>
+            <div class="control-group">
+                <label>Цвет текста: <input type="color" id="textColor" value="#1f2937"></label>
+            </div>
+            <div class="control-group">
+                <label>Размер шрифта: 
+                    <select id="fontSize">
+                        <option value="16px">Обычный (16px)</option>
+                        <option value="20px">Крупный (20px)</option>
+                        <option value="24px">Очень крупный (24px)</option>
+                    </select>
+                </label>
+            </div>
+            <button class="btn btn-danger" id="resetSettingsBtn">Сбросить настройки</button>
+        </section>
+
+        <section class="card">
+            <h3>2. Список задач (sessionStorage)</h3>
+            <div class="todo-controls">
+                <input type="text" id="taskInput" placeholder="Новая задача...">
+                <button class="btn btn-primary" id="addTaskBtn">Добавить</button>
+            </div>
+            <ul id="taskList" class="task-list"></ul>
+        </section>
+
+        <section class="card">
+            <h3>3. Авторизация (Cookies)</h3>
+            
+            <div id="authSection">
+                <div class="control-group">
+                    <input type="text" id="usernameInput" placeholder="Ваше имя">
+                </div>
+                <div class="control-group">
+                    <select id="langInput">
+                        <option value="ru">Русский (RU)</option>
+                        <option value="en">English (EN)</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="loginBtn">Войти</button>
+            </div>
+
+            <div id="greetingSection" class="hidden">
+                <h4 id="greetingText"></h4>
+                <button class="btn btn-danger" id="logoutBtn">Выйти (Удалить Cookie)</button>
+            </div>
+        </section>
+
+        <section class="card full-width">
+            <h3>4. Текстовый редактор (File System API)</h3>
+            <div class="toolbar">
+                <button class="btn" id="openFileBtn">📂 Открыть файл</button>
+                <button class="btn" id="saveFileBtn">💾 Сохранить</button>
+                <button class="btn" id="saveAsBtn">📝 Сохранить как...</button>
+                <span id="fileStatus">Новый файл</span>
+            </div>
+            <textarea id="textEditor" placeholder="Начните печатать здесь..."></textarea>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторная работа №22</title>
+    <title>Лабораторная работа №23</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Задание 1 -->
     <section class="task">
-        <h2>Задание 1: Счетчик кликов</h2>
-        <button id="task1-btn">Увеличить значение</button>
-        <p>Счетчик: <span id="task1-span">0</span></p>
+        <h2>Задание 1: Плавное появление (Opacity)</h2>
+        <button id="task1-btn">Показать элемент</button>
+        <div id="task1-box" class="box" style="opacity: 0;">Я появляюсь!</div>
     </section>
 
-    <!-- Задание 2 -->
     <section class="task">
-        <h2>Задание 2: Изменение цвета при наведении</h2>
-        <div id="task2-div" class="hover-box">Наведи на меня курсор мыши</div>
+        <h2>Задание 2: Циклическое изменение цвета</h2>
+        <button id="task2-btn">Старт / Стоп смена цвета</button>
+        <div id="task2-box" class="box color-transition">Смена цвета</div>
     </section>
 
-    <!-- Задание 3 -->
     <section class="task">
-        <h2>Задание 3: Отслеживание ввода</h2>
-        <input type="text" id="task3-input" placeholder="Пиши сюда...">
-        <p>Вы ввели: <span id="task3-output"></span></p>
-    </section>
-
-    <!-- Задание 4 -->
-    <section class="task">
-        <h2>Задание 4: Скрытие и показ элемента</h2>
-        <button id="task4-btn">Показать / Скрыть блок</button>
-        <div id="task4-div" style="display: none;" class="secret-box">
-            Секретный текст, который появляется и исчезает!
+        <h2>Задание 3: Горизонтальное перемещение</h2>
+        <label for="speed-input">Скорость (пикс/кадр): </label>
+        <input type="number" id="speed-input" value="3" min="1" max="20" style="width: 60px; margin-bottom: 10px;">
+        <br>
+        <button id="task3-btn">Поехать вправо</button>
+        <div class="track">
+            <div id="task3-box" class="box">Вжух!</div>
         </div>
     </section>
 
-    <!-- Задание 5 -->
     <section class="task">
-        <h2>Задание 5: Валидация формы</h2>
-        <form id="task5-form">
-            <input type="text" id="task5-email" placeholder="Введите email">
-            <button type="submit">Отправить</button>
-            <span id="task5-error" class="error-msg"></span>
-        </form>
+        <h2>Задание 4: Масштаб и Прозрачность</h2>
+        <button id="task4-btn">Анимировать</button>
+        <div id="task4-box" class="box transition-all">Увеличиваюсь и исчезаю</div>
+    </section>
+
+    <section class="task">
+        <h2>Задание 5: Последовательность анимаций</h2>
+        <button id="task5-btn">Запустить цепочку</button>
+        <div class="track">
+            <div id="task5-box" class="box transition-all">Цепочка</div>
+        </div>
     </section>
 
     <script src="script.js"></script>
