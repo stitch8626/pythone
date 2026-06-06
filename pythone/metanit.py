@@ -18,6 +18,6 @@ class Person:
        print(f"Имя: {self.__name}\nВозраст: {self.__age}")
 
 
-Yaroslav = Person("Yaroslav", 16)
+Yaroslav = Person("Yaroslav попросил залить на гит", 16)
 Yaroslav._Person__name = "Spider man"
 Yaroslav.print_person()
