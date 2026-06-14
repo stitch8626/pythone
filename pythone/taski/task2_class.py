@@ -10,6 +10,7 @@
 class BankAccount:
     def __init__(self, balance= 0,account_number=1 ):
         self.balance = balance
+        self.account_number = account_number
         print(f"у акаунта {account_number} баланс: {balance}")
 
     def add(self, summary_add=0):
