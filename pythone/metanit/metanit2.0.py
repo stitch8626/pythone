@@ -1,34 +1,30 @@
-class Person: 
+class Person:
+ 
     def __init__(self, name):
-        self.__name = name 
-
-
+        self.__name = name   # имя человека
+ 
     @property
     def name(self):
         return self.__name
-    
+ 
     def display_info(self):
-        print(f"Имя {self.name}")
-    
-
-class Summary_bank(Person):
-
-    def __init__(self,name, summary):
+        print(f"Name: {self.__name}")
+ 
+ 
+class Employee(Person):
+ 
+    def __init__(self, name, company):
         super().__init__(name)
-        self.__summary = summary
-    
-
-    @property
-    def summary(self):
-        return self.__summary
-    
-
-    def dislpay_info(self):
+        self.company = company
+ 
+    def display_info(self):
         super().display_info()
-        print(f"Сумма: {self.__summary}")
-
-
-
-
-tom = Summary_bank("Tom", 67)
-tom.dislpay_info()
+        print(f"Company: {self.company}")
+ 
+    def work(self):
+        print(f"{self.name} works")
+ 
+ 
+tom = Employee("Tom", "Microsoft")
+tom.display_info()  # Name: Tom
+                    # Company: Microsoft
